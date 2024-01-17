@@ -22,7 +22,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String str = "Hello World";
+        String str = "vowels are fun";
         System.out.println(capVowelsLowRest(str));
     }
 
@@ -49,4 +49,3 @@ public class StringOps {
         // Write your code here:
         return new int[1];
     }
-}
