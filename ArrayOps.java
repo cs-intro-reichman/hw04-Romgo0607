@@ -40,6 +40,9 @@ public class ArrayOps {
                 missing++;
             }
         }
+        if(missing == array.length - 1) {
+            missing = 0;
+        }
         return missing + 1;
     }
 
