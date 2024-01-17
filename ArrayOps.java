@@ -68,7 +68,7 @@ public class ArrayOps {
                 break;
             }
         }
-        return isSameEle;
+        return hasSameInt;
     }
 
         public static int[] Sorted(int [] array) { //returns the arr by order from small to big
