@@ -48,7 +48,6 @@ public class ArrayOps {
         newArr = fillArray(array);
         Sorted(newArr);
         int secondMax = newArr[newArr.length - 2];
-        printArray(newArr);
         return secondMax;
     }
 
