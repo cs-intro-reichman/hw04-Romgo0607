@@ -46,7 +46,7 @@ public class ArrayOps {
     public static int secondMaxValue(int [] array) { //returns the second biggest int
         int[] newArr = new int[array.length];
         newArr = fillArray(array);
-        Sorted(newArr);
+        Sorted(noRepeatInt(newArr));
         int secondMax = newArr[newArr.length - 2];
         return secondMax;
     }
@@ -105,6 +105,33 @@ public class ArrayOps {
                 System.out.print(c);
                 }
             System.out.println();
+        }
+
+        public static boolean contains(int[] array) {
+            for (int i = 0; i < index; i++) {
+                if (arr[i] == value) {
+                    return true;
+                    }
+                }
+            return false ;
+        }
+        
+        public static int countUnique(int[] arr) {
+            int count = 0;
+            for(int i = 0; i < arr.length; i++) {
+                count = contains(arr, arr[i], i) ? count : count + 1;
+                }
+                return count;
+        }
+        public static int [] noRepeatInt (int[] arr) {
+            int [] res = new int [countUnique(arr)];
+            int index = 0;
+            for (int i = 0; i < arr.length; i++) {
+                if (!contains(arr, arr[i], i)){
+                    res[index++] = arr[i];
+                    }
+                }
+                return res;
         }
     }
 
