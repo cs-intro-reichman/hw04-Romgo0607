@@ -1,9 +1,9 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int[] x = {-12 ,4 ,5 ,4 ,7}; //for testing
-        //System.out.println(findMissingInt(x));
+        int[] x = {0, 1, 3}; //for testing
+        System.out.println(findMissingInt(x));
         //System.out.println(secondMaxValue(x));
-        System.out.println(isSorted(x));
+        //System.out.println(isSorted(x));
         //printArray(Sorted(x));
     }
     public static boolean isSorted(int [] array) { //checks if the arr is sorted from big to small or small to big
@@ -34,13 +34,13 @@ public class ArrayOps {
         int[] newArr = new int[array.length];
         newArr = fillArray(array);
         Sorted(newArr);
-        int missing = 1;
-        for( int i = 0; i < array.length - 1; i++) {
-            if( newArr[i] + 1 != newArr[i+1]) {
-                missing = newArr[i] + 1;
+        int missing = 0;
+        for(int i = 0; i < newArr.length - 1; i++) {
+            if(newArr[i] + 1 == newArr[i + 1]) {
+                missing++;
             }
         }
-        return missing;
+        return missing + 1;
     }
 
     public static int secondMaxValue(int [] array) { //returns the second biggest int
