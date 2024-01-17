@@ -1,8 +1,8 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int[] x = {2,0,1}; //for testing
-        System.out.println(findMissingInt(x));
-        //System.out.println(secondMaxValue(x));
+        int[] x = {1, 2, 2, -5, 8, 8}; //for testing
+        //System.out.println(findMissingInt(x));
+        System.out.println(secondMaxValue(x));
         //System.out.println(isSorted(x));
         //printArray(Sorted(x));
     }
@@ -46,8 +46,9 @@ public class ArrayOps {
     public static int secondMaxValue(int [] array) { //returns the second biggest int
         int[] newArr = new int[array.length];
         newArr = fillArray(array);
-        Sorted(noRepeatInt(newArr));
+        Sorted(newArr);
         int secondMax = newArr[newArr.length - 2];
+        printArray(newArr);
         return secondMax;
     }
 
@@ -72,21 +73,19 @@ public class ArrayOps {
     }
 
         public static int[] Sorted(int [] array) { //returns the arr by order from small to big
-            int[] newArr = new int[array.length];
-            newArr = fillArray(array);
-            int index = 0;
-            while(index < newArr.length) {
-                for(int i = index + 1; i < newArr.length; i++) {
+            int index = 0; 
+            while(index < array.length) {
+                for(int i = index + 1; i < array.length; i++) {
                     int temp = 0;
-                    if( newArr[index] > newArr[i]) {
-                        temp = newArr[index];
-                        newArr[index] = newArr[i];
-                        newArr[i] = temp;
+                    if( array[index] > array[i]) {
+                        temp = array[index];
+                        array[index] = array[i];
+                        array[i] = temp;
                     }
                 } 
                 index++;
             }
-            return newArr;
+            return array;
         }
             
         public static int[] fillArray(int [] array) { 
@@ -105,33 +104,6 @@ public class ArrayOps {
                 System.out.print(c);
                 }
             System.out.println();
-        }
-
-        public static boolean contains(int[] array) {
-            for (int i = 0; i < index; i++) {
-                if (arr[i] == value) {
-                    return true;
-                    }
-                }
-            return false ;
-        }
-        
-        public static int countUnique(int[] arr) {
-            int count = 0;
-            for(int i = 0; i < arr.length; i++) {
-                count = contains(arr, arr[i], i) ? count : count + 1;
-                }
-                return count;
-        }
-        public static int [] noRepeatInt (int[] arr) {
-            int [] res = new int [countUnique(arr)];
-            int index = 0;
-            for (int i = 0; i < arr.length; i++) {
-                if (!contains(arr, arr[i], i)){
-                    res[index++] = arr[i];
-                    }
-                }
-                return res;
         }
     }
 
