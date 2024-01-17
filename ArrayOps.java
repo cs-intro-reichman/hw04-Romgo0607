@@ -1,6 +1,7 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int[] x = {1, 2, 2, -5, 8, 8}; //for testing
+        int[] x = {2,2,3,7,8,3,2}; //for testing
+        int[] y = {8,2,7,7,3};
         //System.out.println(findMissingInt(x));
         System.out.println(secondMaxValue(x));
         //System.out.println(isSorted(x));
@@ -51,22 +52,21 @@ public class ArrayOps {
         return secondMax;
     }
 
-    public static boolean containsTheSameElements(int [] array1,int [] array2) {
-        int[] arrCheck = new int[array1.length];
-        arrCheck = fillArray(array1);
-        int[] arrRun = new int[array2.length];
-        arrRun = fillArray(array2);
-        int count = 0;
-        boolean isSameEle = false;
-        for(int i = 0; i < arrCheck.length; i++) {
-            for(int j = 0; j < arrRun.length; j++) {
-                if( arrCheck[i] == arrRun[j]) {
-                    count++;
+    public static boolean containsTheSameElements(int [] array1,int [] array2) { 
+        boolean hasSameInt = false;
+        for(int i = 0; i < array1.length; i++) {
+            for(int j = 0; j < array2.length; j++) { 
+                if(array1[i] != array2[j]) {  
+                    hasSameInt = false;
+                }
+                else {
+                    hasSameInt = true;
+                    break;
                 }
             }
-        }
-        if(count == arrCheck.length) {
-            isSameEle = true;
+            if(hasSameInt == false) {
+                break;
+            }
         }
         return isSameEle;
     }
