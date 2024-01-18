@@ -22,8 +22,8 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String str = "yellow";
-        System.out.println(capVowelsLowRest(str));
+        //String str = "One two tHRee world";
+        //System.out.println(capVowelsLowRest(str));
     }
 
     public static String capVowelsLowRest (String string) { //recives a string and: capital letters to small, {a,e,i,o,u} to capital, small stays small
