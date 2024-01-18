@@ -22,8 +22,8 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String str = "One two tHRee world";
-        System.out.println(capVowelsLowRest(str));
+        //String str = "One two tHRee world";
+        printArray(allIndexOf("hello world", 'd'));
     }
 
     public static String capVowelsLowRest (String string) { //recives a string and: capital letters to small, {a,e,i,o,u} to capital, small stays small
@@ -50,8 +50,21 @@ public class StringOps {
     
 
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+        int count = 0;
+        for( int i = 0; i < string.length(); i++) {
+            if(string.charAt(i) == chr) {
+                count++;
+            }
+        }
+        int [] arr = new int[count];
+        for( int i = 0; i < arr.length; i++) { //i=0 < 1
+            for(int j = 0; j < string.length(); j++) { //j=2 < 10
+                if(string.charAt(j) == chr) {
+                arr[i] = j;
+                }
+            }
+        }
+        return arr;
     }
 
     public static String lowerCase(String s) {
@@ -74,4 +87,14 @@ public class StringOps {
             }
         return res;
     }
+
+    public static void printArray(int[] array) {
+            System.out.print('{');
+            for (int i = 0; i < array.length; i++) {
+                System.out.print(array[i]);
+                char c = i != array.length - 1 ? ',' : '}';
+                System.out.print(c);
+                }
+            System.out.println();
+        }
 }
