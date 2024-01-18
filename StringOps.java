@@ -22,9 +22,9 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        //String str = "tWo    wordS";
+        String str = "tWo    wordS";
         //printArray(allIndexOf("Hello worLd", 'l'));
-       //System.out.println(camelCase(str));
+       System.out.println(camelCase(str));
     }
 
     public static String capVowelsLowRest (String string) { //recives a string and: capital letters to small, {a,e,i,o,u} to capital, small stays small
