@@ -22,16 +22,18 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        //String str = "One two tHRee world";
-        //System.out.println(capVowelsLowRest(str));
+        String str = "One two tHRee world";
+        System.out.println(capVowelsLowRest(str));
     }
 
     public static String capVowelsLowRest (String string) { //recives a string and: capital letters to small, {a,e,i,o,u} to capital, small stays small
         String str = "";
         for(int i = 0; i < string.length(); i++) {
-            if((string.charAt(i) <= 'Z') && (string.charAt(i) >= 'A')) {
+            if((string.charAt(i) <= 'Z') && (string.charAt(i) >= 'A') && (string.charAt(i) != 'A') && (string.charAt(i) != 'E')
+             && (string.charAt(i) != 'I') && (string.charAt(i) != 'O') && (string.charAt(i) != 'U')) {
                 str += (char)(string.charAt(i) + 32);
-            } else if((string.charAt(i) == 'a') || (string.charAt(i) == 'e') || (string.charAt(i) == 'i') || (string.charAt(i) == 'o') || (string.charAt(i) == 'u')) {
+            } else if((string.charAt(i) == 'a') || (string.charAt(i) == 'e') || (string.charAt(i) == 'i') || (string.charAt(i) == 'o')
+             || (string.charAt(i) == 'u')) {
                 str += (char)(string.charAt(i) - 32);
             } else {
                 str += (char)(string.charAt(i));
