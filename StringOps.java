@@ -98,6 +98,7 @@ public class StringOps {
         }
         return s2;
     }
+    
     public static String subs(String str, int start, int end ) {
         String res = "";
         for (int i = start; i < end; i++) {
