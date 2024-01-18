@@ -49,9 +49,16 @@ public class StringOps {
         int [] arr = allIndexOf(string, ' ');
         str += lowerCase(subs(string, 0, arr[0]));
         for( int i = arr[0]; i < string.length(); i++) {
-            if(string.charAt(i) != ' ') {
-                strTemp += (char)string.charAt(i);
+            if(string.charAt(i) == ' ') {
+                i++;
             }
+            if(((char)string.charAt(i) >= 'a') && ((char)string.charAt(i) <= 'z') && ((char)string.charAt(i-1) == ' ')) {
+                    strTemp += (char)(string.charAt(i) - 32);
+                } else if(((char)string.charAt(i) >= 'A') && ((char)string.charAt(i) <= 'Z')) {
+                    strTemp += (char)(string.charAt(i) + 32);
+                    } else {
+                        strTemp += (char)string.charAt(i);
+                        }
         }  
         lowerCase(strTemp);
         str += strTemp;
