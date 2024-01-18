@@ -23,7 +23,7 @@ public class StringOps {
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
         //String str = "One two tHRee world";
-        printArray(allIndexOf("Hello world",' '));
+        printArray(allIndexOf("Hello worLd", 'l'));
     }
 
     public static String capVowelsLowRest (String string) { //recives a string and: capital letters to small, {a,e,i,o,u} to capital, small stays small
@@ -56,13 +56,13 @@ public class StringOps {
                 count++;
             }
         }
-        int [] arr = new int[count]; //"MMMM", 'M'
-        for( int i = 0; i < arr.length; i++) { //i=1 < 4
-            int repeat = 0;
-            for(int j = i; j < string.length(); j++) { //j=1 < 4
-                if((string.charAt(j) == chr) && (repeat < 1)) {
-                arr[i] = j; //{0, }
-                repeat++; //re = 0
+        int [] arr = new int[count]; //"Hello worLd", 'l'
+        for( int i = 0; i < arr.length; i++) { //i=0 < 2
+            //int repeat = 0;
+            for(int j = i; j < string.length(); j++) { //j=3 < 11
+                if((string.charAt(j) == chr)) {
+                arr[i] = j; //{2, }
+                i++; //re = 1
                 }
             }
         }
