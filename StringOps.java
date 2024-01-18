@@ -22,7 +22,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String str = "vowels are fun";
+        String str = "yellow";
         System.out.println(capVowelsLowRest(str));
     }
 
@@ -41,11 +41,35 @@ public class StringOps {
     }
 
     public static String camelCase (String string) {
-        // Write your code here:
-        return "";
-    }
+        //???
+        return null;
+        }
+        
+    
 
     public static int[] allIndexOf (String string, char chr) {
         // Write your code here:
         return new int[1];
     }
+
+    public static String lowerCase(String s) {
+        String s1 = s; 
+        String s2 = "";
+        for(int i = 0; i < s1.length(); i++) {
+            char letter = s1.charAt(i); 
+            if((letter <= 'Z') && (letter >= 'A')) {
+                s2 = s2 + (char)(s1.charAt(i) + 32); 
+            } else {
+                s2 = s2 + letter;
+            }
+        }
+        return s2;
+    }
+    public static String subs(String str, int start, int end ) {
+        String res = "";
+        for (int i = start; i < end; i++) {
+            res += str.charAt(i);
+            }
+        return res;
+    }
+}
